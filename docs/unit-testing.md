@@ -3,7 +3,7 @@ Your testing stack
 Angular 21
 
 Technology	Purpose
-Vitest	Test runner, assertions, mocking and spies
+Jasmine & Karma	Test runner, assertions, mocking and spies
 Angular TestBed	Configure Angular's testing environment
 ComponentFixture	Create and inspect component instances
 HttpTestingController	Mock and verify HTTP requests
@@ -13,8 +13,8 @@ Angular testing utilities	Handle component change detection and async behavior
 Complete syllabus
 Module	Concepts
 1. Fundamentals	Unit vs integration tests, AAA, isolation, test structure
-2. Vitest	describe, it, hooks, matchers, setup, lifecycle
-3. Mocking	vi.fn, vi.spyOn, vi.mock, mock implementations
+2. Jasmine & Karma	describe, it, hooks, matchers, setup, lifecycle
+3. Mocking	spyOn, jasmine.createSpy, jasmine.createSpyObj, and.returnValue
 4. Pure functions	Input/output testing, edge cases, parameterized tests
 5. Services	TestBed, inject, dependency mocking, error handling
 6. Components	Fixture, DOM, change detection, inputs, outputs, events
