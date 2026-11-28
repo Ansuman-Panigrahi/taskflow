@@ -1,0 +1,26 @@
+<form class="task-form" (ngSubmit)="onSubmit()">
+  <div class="input-row">
+    <input
+      type="text"
+      name="title"
+      [(ngModel)]="title"
+      placeholder="What needs to be done?"
+      aria-label="Task title"
+      class="title-input"
+    />
+    <select
+      name="priority"
+      [(ngModel)]="priority"
+      aria-label="Task priority"
+      class="priority-select"
+    >
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <button type="submit" class="add-btn">Add Task</button>
+  </div>
+  @if (validationError()) {
+    <p class="error-text" role="alert">{{ validationError() }}</p>
+  }
+</form>

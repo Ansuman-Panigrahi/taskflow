@@ -1,0 +1,44 @@
+<li class="task-item" [class.completed]="task().completed">
+  @if (isEditing()) {
+    <div class="edit-row">
+      <input
+        type="text"
+        [(ngModel)]="editTitle"
+        aria-label="Edit task title"
+        class="edit-input"
+      />
+      <select
+        [(ngModel)]="editPriority"
+        aria-label="Edit task priority"
+        class="edit-select"
+      >
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button type="button" class="btn save-btn" (click)="saveEdit()">Save</button>
+      <button type="button" class="btn cancel-btn" (click)="cancelEdit()">Cancel</button>
+    </div>
+    @if (editError()) {
+      <p class="error-text" role="alert">{{ editError() }}</p>
+    }
+  } @else {
+    <label class="task-label">
+      <input
+        type="checkbox"
+        [checked]="task().completed"
+        (change)="toggle.emit(task().id)"
+      />
+      <span class="task-title">{{ task().title }}</span>
+    </label>
+    <div class="task-actions">
+      <span class="priority-badge" [class]="task().priority">
+        {{ task().priority }}
+      </span>
+      <button type="button" class="btn edit-btn" (click)="startEdit()">Edit</button>
+      <button type="button" class="btn delete-btn" (click)="delete.emit(task().id)">
+        Delete
+      </button>
+    </div>
+  }
+</li>
