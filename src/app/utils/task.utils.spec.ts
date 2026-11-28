@@ -10,7 +10,7 @@ describe("Validate task title", () => {
         //Assert
         expect(result)?.toBe("Task title is required.")
     })
-    it("Should return an error when task title is empty or white space", () => {
+    it("Should return an error when task title is white space", () => {
         //Arrange
         const title = '    ';
         // Act
